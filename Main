@@ -1,0 +1,30 @@
+#Problem: Given an input of a string, determine the most common character in the string:
+#Need a loop to run through the string.
+#Loop needs to count each letter, then print the letters with the count.
+
+#Get input from user:
+words = input("Input the string to evaluate for the most common character:")
+
+#Print result:
+print("You entered: ",words)
+
+#Set blank Dictionary:
+count = {}
+
+#Write Loop for all characters in lower case:
+for x in words:
+    if x in count:
+        count[x.lower()] = count[x.lower()] + 1
+    else:
+        count[x.lower()] = 1
+#Delete out the blank key, remove line if you want spaces left in:
+count.pop(" ")
+
+#F-String (Formatted String) for results of key (character):
+print(f"The index of all characters is: {count}")
+print("The most common character is: \"" + max(count, key = count.get) + "\"")
+
+#Variable for maximum count of key (character):
+all_values = count.values()
+max_value = max(all_values)
+print(f"Maximum Value:  \"{max_value}\"")
